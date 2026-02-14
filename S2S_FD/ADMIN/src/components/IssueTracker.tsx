@@ -65,15 +65,15 @@ export function IssueTracker() {
         author: saved.authorId ? 'You' : 'Citizen',
         createdAt: saved.createdAt ? new Date(saved.createdAt) : new Date(),
         isOfficial: saved.isOfficial || false
-      };
-      setIssues(prev => prev.map(issue => 
+    };
+    setIssues(prev => prev.map(issue => 
         String(issue.id) === String(selectedIssue.id) 
           ? { ...issue, comments: [...(issue.comments || []), created] }
-          : issue
-      ));
+        : issue
+    ));
       setSelectedIssue(prev => prev ? { ...prev, comments: [...(prev.comments || []), created] } : null);
-      setNewComment('');
-      toast.success('Comment added successfully');
+    setNewComment('');
+    toast.success('Comment added successfully');
     }).catch(() => {
       toast.error('Failed to add comment');
     });

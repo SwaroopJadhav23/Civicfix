@@ -1,0 +1,14 @@
+{
+  "name": "civicfix-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install-all": "npm --prefix backend install && npm --prefix S2S_FD/ADMIN install && npm --prefix S2S_FD/HOME install",
+    "dev": "npx concurrently \"npm --prefix backend run dev\" \"npm --prefix S2S_FD/ADMIN run dev\" \"npm --prefix S2S_FD/HOME run dev\"",
+    "start-all": "npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
+
